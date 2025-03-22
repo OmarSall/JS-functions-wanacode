@@ -75,7 +75,7 @@ console.log(greeting); // Hi, “John Smith”. What's up?
 // --------------------------------------------------
 
 function getGreeting(firstName, lastname) {
-    message = `Hi, "${firstName} ${lastname}". What's up?`;
+    message = "Hi, \"${firstName} ${lastname}\". What's up?";
     return message;
 }
 
@@ -142,7 +142,7 @@ console.log(circlesAreaSum); // 392.69908169872417
 // 1 <= month <= 12
 
 function getQuarter(month) {
-    if (Number.isInteger(month) && month > 0 && month < 13) {
+    if (Number.isInteger(month) && month >= 1 && month <= 12) {
         return Math.ceil(month / 3);
     }
     return "Month has to be a number between 1 and 12!"
@@ -272,6 +272,23 @@ function basicOp(operation, value1, value2) {
 }
 
 console.log(basicOp('+', 4, 7));  // 11
+
+// ---------SWITCH statement version--------------------
+
+function basicOp(operation, value1, value2) {
+    switch (operation) {
+        case '+':
+            return value1 + value2;
+        case '-':
+            return value1 - value2;
+        case '*':
+            return value1 * value2;
+        case '/':
+            return value1 / value2;
+        default:
+            return 'Invalid operation';
+    }
+}
 
 // 15. The first century spans from the year 1 up to and including 
 // the year 100, the second century - from the year 101 up to and 
